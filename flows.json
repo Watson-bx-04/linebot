@@ -32,8 +32,7 @@
         "y": 380,
         "wires": [
             [
-                "cce3caeaaa84d971",
-                "d32b57696202634e"
+                "cce3caeaaa84d971"
             ]
         ]
     },
@@ -42,15 +41,15 @@
         "type": "debug",
         "z": "8a400ed1add1fbd9",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 380,
+        "x": 800,
+        "y": 260,
         "wires": []
     },
     {
@@ -68,12 +67,13 @@
         "timeout": "",
         "optout-learning": false,
         "persist-session-id": false,
-        "x": 630,
-        "y": 380,
+        "x": 610,
+        "y": 260,
         "wires": [
             [
                 "6df93be5d083c18b",
-                "3c222a454588e2f8"
+                "3c222a454588e2f8",
+                "5a85df5dfda9bc67"
             ]
         ]
     },
@@ -235,95 +235,24 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "b921c19932524ee2",
-        "type": "template",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "あなたは言いました {{payload}} !",
-        "output": "str",
-        "x": 620,
-        "y": 300,
-        "wires": [
-            [
-                "021cdfc52921cd7d"
-            ]
-        ]
-    },
-    {
-        "id": "021cdfc52921cd7d",
-        "type": "debug",
-        "z": "8a400ed1add1fbd9",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 840,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "d32b57696202634e",
-        "type": "debug",
-        "z": "8a400ed1add1fbd9",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 620,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "2150d2886a90f7e0",
-        "type": "http in",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "url": "/line_webhook",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 350,
+        "x": 800,
         "y": 320,
-        "wires": [
-            [
-                "d32b57696202634e",
-                "b921c19932524ee2"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "142ea86c6ab191dc",
         "type": "http in",
         "z": "8a400ed1add1fbd9",
         "name": "",
-        "url": "/get",
-        "method": "get",
+        "url": "/debug",
+        "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 380,
+        "x": 390,
         "y": 40,
         "wires": [
             [
-                "4985877a6a8abdc5"
+                "661c28c2bc044432"
             ]
         ]
     },
@@ -339,16 +268,104 @@
         "wires": []
     },
     {
-        "id": "4985877a6a8abdc5",
+        "id": "b149b840d89076a5",
+        "type": "Webhook",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "url": "/line_webhook",
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "817bfc4bfd5a3755"
+            ]
+        ]
+    },
+    {
+        "id": "817bfc4bfd5a3755",
+        "type": "ReplyMessage",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "replyMessage": "{       \"type\": \"flex\",       \"altText\": \"This is a Flex Message\",       \"contents\": {         \"type\": \"bubble\",         \"body\": {           \"type\": \"box\",           \"layout\": \"horizontal\",           \"contents\": [             {               \"type\": \"text\",               \"text\": \"Hello,\"             },             {               \"type\": \"text\",               \"text\": \"World!\"             }           ]         }       }     }",
+        "x": 1080,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5a85df5dfda9bc67",
+        "type": "change",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.output.generic[0].text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 180,
+        "wires": [
+            [
+                "817bfc4bfd5a3755"
+            ]
+        ]
+    },
+    {
+        "id": "186add14f8c703ed",
         "type": "template",
         "z": "8a400ed1add1fbd9",
         "name": "",
         "field": "payload",
         "fieldType": "msg",
         "format": "json",
-        "syntax": "mustache",
-        "template": "{\n    \"test\":\"Robocon 100 ten\"\n}",
+        "syntax": "plain",
+        "template": "\"messages\": [\n    {\n      \"type\": \"flex\",\n      \"altText\": \"This is a Flex Message\",\n      \"contents\": {\n        \"type\": \"bubble\",\n        \"body\": {\n          \"type\": \"box\",\n          \"layout\": \"horizontal\",\n          \"contents\": [\n            {\n              \"type\": \"text\",\n              \"text\": \"Hello,\"\n            },\n            {\n              \"type\": \"text\",\n              \"text\": \"World!\"\n            }\n          ]\n        }\n      }\n    }\n]",
         "output": "str",
+        "x": 800,
+        "y": 100,
+        "wires": [
+            [
+                "817bfc4bfd5a3755",
+                "524d0bbdbe0e5c56"
+            ]
+        ]
+    },
+    {
+        "id": "524d0bbdbe0e5c56",
+        "type": "debug",
+        "z": "8a400ed1add1fbd9",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "661c28c2bc044432",
+        "type": "function",
+        "z": "8a400ed1add1fbd9",
+        "name": "function 1",
+        "func": "\nconst line = context.global.linebot;\n\nconst config = {\n    channelAccessToken: '***',\n    channelSecret: '***',\n};\n\n// create LINE SDK client\nconst client = new line.Client(config);\n// get event\nconst event = msg.payload.events[0];\n// get message\nconst received_msg = event.message.text;\n// return message\nvar massage = { type: 'text', text: received_msg };\n\n\n// replay!\nclient.replyMessage(event.replyToken, massage);\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 620,
         "y": 40,
         "wires": [
