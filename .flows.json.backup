@@ -368,11 +368,11 @@
         "type": "http in",
         "z": "8b3dd138d1c2403f",
         "name": "",
-        "url": "/hagino",
+        "url": "/line_webhook",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 210,
+        "x": 110,
         "y": 180,
         "wires": [
             [
@@ -391,7 +391,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
+        "x": 340,
         "y": 180,
         "wires": [
             [
@@ -438,8 +438,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 900,
-        "y": 360,
+        "x": 1000,
+        "y": 320,
         "wires": [
             [
                 "a28b9d6f73d90c43"
@@ -455,8 +455,8 @@
         "tosidebar": true,
         "console": false,
         "complete": "true",
-        "x": 1090,
-        "y": 360,
+        "x": 1170,
+        "y": 320,
         "wires": []
     },
     {
@@ -469,8 +469,8 @@
         "console": false,
         "tostatus": false,
         "complete": "false",
-        "x": 610,
-        "y": 620,
+        "x": 750,
+        "y": 480,
         "wires": []
     },
     {
@@ -492,8 +492,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 500,
+        "x": 410,
+        "y": 480,
         "wires": [
             [
                 "7e023574631c2a4e",
@@ -520,7 +520,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
+        "x": 410,
         "y": 320,
         "wires": [
             [
@@ -547,73 +547,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 220,
+        "x": 610,
+        "y": 240,
         "wires": [
             [
                 "828b18c6f482caf3"
             ]
-        ]
-    },
-    {
-        "id": "6fb3f37198cd95b6",
-        "type": "function",
-        "z": "8b3dd138d1c2403f",
-        "name": "createReplyMessage",
-        "func": "//flowから取り出す\nvar output_text = flow.get(\"text\");\n\nvar post_request = {\n    \"headers\": {\n        \"content-type\": \"application/json; charset=UTF-8\",\n        \"Authorization\": \" Bearer \" + \"{f8lfApwnliFqLaBn3EwSVgLio/3rYkjRug5Vcw7W5Phwffh7w+fpRLcyCEzVGiw1OuzWcwgMIXV/yp66zTe0SuDuP+Wmvvrw/WL+JgHH9bQOrMUZd3fGCWnAQ++TWL3seP53jT04xkHIrtCgszxUzQdB04t89/1O/w1cDnyilFU=}\"\n    },\n    \"payload\": {\n        //\"replyToken\": msg.payload.events[0].replyToken,\n        \"replyToken\": flow.get(\"replyToken\"),\n        \"messages\": [\n            {\n                \"type\": \"text\",\n                //\"text\": msg.payload.optext + \"ฅ^•ﻌ•^ฅ\"\n                \"text\": msg.payload.optext\n            }\n        ]\n    }\n};\n\nreturn post_request;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 560,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b63a9137db73a8b7",
-        "type": "comment",
-        "z": "8b3dd138d1c2403f",
-        "name": "オリジナル",
-        "info": "",
-        "x": 880,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "1d2da0ba1e59753c",
-        "type": "function",
-        "z": "8b3dd138d1c2403f",
-        "name": "createReplyMessage",
-        "func": "//flowから取り出す\nvar output_text = flow.get(\"text\");\n\nvar post_request = {\n    \"headers\": {\n        \"content-type\": \"application/json; charset=UTF-8\",\n        \"Authorization\": \" Bearer \" + \"{f8lfApwnliFqLaBn3EwSVgLio/3rYkjRug5Vcw7W5Phwffh7w+fpRLcyCEzVGiw1OuzWcwgMIXV/yp66zTe0SuDuP+Wmvvrw/WL+JgHH9bQOrMUZd3fGCWnAQ++TWL3seP53jT04xkHIrtCgszxUzQdB04t89/1O/w1cDnyilFU=}\"\n    },\n    \"payload\": {\n        //\"replyToken\": msg.payload.events[0].replyToken,\n        \"replyToken\": flow.get(\"replyToken\"),\n        \"messages\": [\n            {\n                \"type\": \"text\",\n                \"text\": msg.payload.optext\n            },\n            {\n                \"type\": \"flex\",\n                \"altText\": \"This is a Flex Message\",\n                \"contents\": {\n                    \"type\": \"bubble\",\n                    \"body\": {\n                        \"type\": \"box\",\n                        \"layout\": \"vertical\",\n                        \"contents\": [\n                            {\n                                \"type\": \"text\",\n                                \"text\": \"Hello,\"\n                            },\n                            {\n                                \"type\": \"text\",\n                                \"text\": \"World!\"\n                            }\n                        ]\n                    }\n                }\n            }\n        ]\n    }\n};\n\nreturn post_request;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "83366f0e3644f56d",
-        "type": "function",
-        "z": "8b3dd138d1c2403f",
-        "name": "createReplyMessage",
-        "func": "//flowから取り出す\nvar output_text = flow.get(\"text\");\n\nvar post_request = {\n    \"headers\": {\n        \"content-type\": \"application/json; charset=UTF-8\",\n        \"Authorization\": \" Bearer \" + \"{f8lfApwnliFqLaBn3EwSVgLio/3rYkjRug5Vcw7W5Phwffh7w+fpRLcyCEzVGiw1OuzWcwgMIXV/yp66zTe0SuDuP+Wmvvrw/WL+JgHH9bQOrMUZd3fGCWnAQ++TWL3seP53jT04xkHIrtCgszxUzQdB04t89/1O/w1cDnyilFU=}\"\n    },\n    \"payload\": {\n        //\"replyToken\": msg.payload.events[0].replyToken,\n        \"replyToken\": flow.get(\"replyToken\"),\n        \"messages\": [\n            {\n                \"type\": \"text\",\n                \"text\": msg.payload.optext\n            },\n            {\n                \"type\": \"template\",\n                \"altText\": \"this is a buttons template\",\n                \"template\": {\n                    \"type\": \"buttons\",\n                    \"title\": \"ピザの種類\",\n                    \"text\": \"おすすめ\",\n                    \"actions\": [\n                        {\n                            \"type\": \"postback\",\n                            \"label\": \"マルゲリータ\",\n                            \"text\": \"マルゲリータ\",\n                            \"data\": \"データ 1\"\n                        },\n                        {\n                            \"type\": \"message\",\n                            \"label\": \"シーフード\",\n                            \"text\": \"シーフード\"\n                        },\n                        {\n                            \"type\": \"message\",\n                            \"label\": \"ペパロニ\",\n                            \"text\": \"ペパロニ\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n};\n\nreturn post_request;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 440,
-        "wires": [
-            []
         ]
     },
     {
@@ -631,29 +570,12 @@
         "timeout": "",
         "optout-learning": false,
         "persist-session-id": false,
-        "x": 250,
+        "x": 350,
         "y": 400,
         "wires": [
             [
                 "85796c37ba6fd476"
             ]
-        ]
-    },
-    {
-        "id": "94c819db4198ecd1",
-        "type": "function",
-        "z": "8b3dd138d1c2403f",
-        "name": "createReplyMessage",
-        "func": "//flowから取り出す\nvar output_text = flow.get(\"text\");\n\nvar post_request = {\n    \"headers\": {\n        \"content-type\": \"application/json; charset=UTF-8\",\n        \"Authorization\": \" Bearer \" + \"{f8lfApwnliFqLaBn3EwSVgLio/3rYkjRug5Vcw7W5Phwffh7w+fpRLcyCEzVGiw1OuzWcwgMIXV/yp66zTe0SuDuP+Wmvvrw/WL+JgHH9bQOrMUZd3fGCWnAQ++TWL3seP53jT04xkHIrtCgszxUzQdB04t89/1O/w1cDnyilFU=}\"\n    },\n    \"payload\": {\n        //\"replyToken\": msg.payload.events[0].replyToken,\n        \"replyToken\": flow.get(\"replyToken\"),\n        \"messages\": [\n            {\n                \"type\": \"text\",\n                \"text\": msg.payload.optext\n            },\n            {\n                \"type\": \"flex\",\n                \"altText\": \"This is a Flex Message\",\n                \"contents\": {\n                    \"type\": \"bubble\",\n                    \"body\": {\n                        \"type\": \"box\",\n                        \"layout\": \"vertical\",\n                        \"contents\": [\n                            {\n                                \"type\": \"text\",\n                                \"text\": \"Hello,\"\n                            },\n                            {\n                                \"type\": \"text\",\n                                \"text\": \"World!\"\n                            }\n                        ]\n                    }\n                }\n            }\n        ]\n    }\n};\n\nreturn post_request;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1180,
-        "y": 440,
-        "wires": [
-            []
         ]
     },
     {
@@ -667,8 +589,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 640,
-        "y": 360,
+        "x": 780,
+        "y": 320,
         "wires": [
             [
                 "3746bff0b14d8124"
