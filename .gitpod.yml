@@ -6,7 +6,3 @@ tasks:
 ports:
   - port: 1880
     onOpen: notify
-
-vscode:
-  extensions:
-    - vscodevim.vim
