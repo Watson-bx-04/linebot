@@ -254,20 +254,9 @@
         "y": 300,
         "wires": [
             [
-                "0535c8308f7876d3",
                 "021cdfc52921cd7d"
             ]
         ]
-    },
-    {
-        "id": "0535c8308f7876d3",
-        "type": "ReplyMessage",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "replyMessage": "",
-        "x": 860,
-        "y": 300,
-        "wires": []
     },
     {
         "id": "021cdfc52921cd7d",
@@ -299,7 +288,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
+        "x": 620,
         "y": 220,
         "wires": []
     },
@@ -312,8 +301,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 410,
-        "y": 300,
+        "x": 350,
+        "y": 320,
         "wires": [
             [
                 "d32b57696202634e",
@@ -331,7 +320,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 380,
-        "y": 100,
+        "y": 40,
         "wires": [
             [
                 "4985877a6a8abdc5"
@@ -346,7 +335,7 @@
         "statusCode": "",
         "headers": {},
         "x": 850,
-        "y": 100,
+        "y": 40,
         "wires": []
     },
     {
@@ -361,7 +350,7 @@
         "template": "{\n    \"test\":\"Robocon 100 ten\"\n}",
         "output": "str",
         "x": 620,
-        "y": 100,
+        "y": 40,
         "wires": [
             [
                 "3aa2fa71d054d93e"
