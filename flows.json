@@ -368,7 +368,7 @@
         "type": "http in",
         "z": "8b3dd138d1c2403f",
         "name": "",
-        "url": "/hagino",
+        "url": "/line_webhook",
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
