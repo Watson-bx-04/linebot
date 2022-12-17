@@ -5,4 +5,4 @@ tasks:
 # Ports to expose on workspace startup (optional)
 ports:
   - port: 1880
-    onOpen: open-preview
+    onOpen: notify
