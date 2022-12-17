@@ -28,11 +28,12 @@
         "topic": "",
         "payload": "ピザの注文",
         "payloadType": "str",
-        "x": 400,
-        "y": 240,
+        "x": 380,
+        "y": 380,
         "wires": [
             [
-                "cce3caeaaa84d971"
+                "cce3caeaaa84d971",
+                "d32b57696202634e"
             ]
         ]
     },
@@ -48,8 +49,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 80,
+        "x": 840,
+        "y": 380,
         "wires": []
     },
     {
@@ -67,8 +68,8 @@
         "timeout": "",
         "optout-learning": false,
         "persist-session-id": false,
-        "x": 650,
-        "y": 80,
+        "x": 630,
+        "y": 380,
         "wires": [
             [
                 "6df93be5d083c18b",
@@ -97,8 +98,8 @@
         "topic": "",
         "payload": "マルゲリータ",
         "payloadType": "str",
-        "x": 390,
-        "y": 320,
+        "x": 370,
+        "y": 460,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -126,8 +127,8 @@
         "topic": "",
         "payload": "Mサイズ",
         "payloadType": "str",
-        "x": 400,
-        "y": 420,
+        "x": 380,
+        "y": 560,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -155,8 +156,8 @@
         "topic": "",
         "payload": "6pm",
         "payloadType": "str",
-        "x": 410,
-        "y": 500,
+        "x": 390,
+        "y": 640,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -184,8 +185,8 @@
         "topic": "",
         "payload": "やっぱり7pm",
         "payloadType": "str",
-        "x": 390,
-        "y": 580,
+        "x": 370,
+        "y": 720,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -213,8 +214,8 @@
         "topic": "",
         "payload": "OK",
         "payloadType": "str",
-        "x": 410,
-        "y": 660,
+        "x": 390,
+        "y": 800,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -234,8 +235,137 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 180,
+        "x": 840,
+        "y": 480,
         "wires": []
+    },
+    {
+        "id": "b921c19932524ee2",
+        "type": "template",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "あなたは言いました {{payload}} !",
+        "output": "str",
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "0535c8308f7876d3",
+                "021cdfc52921cd7d"
+            ]
+        ]
+    },
+    {
+        "id": "0535c8308f7876d3",
+        "type": "ReplyMessage",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "replyMessage": "",
+        "x": 860,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "021cdfc52921cd7d",
+        "type": "debug",
+        "z": "8a400ed1add1fbd9",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d32b57696202634e",
+        "type": "debug",
+        "z": "8a400ed1add1fbd9",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2150d2886a90f7e0",
+        "type": "http in",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "url": "/line",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 380,
+        "y": 300,
+        "wires": [
+            [
+                "d32b57696202634e",
+                "b921c19932524ee2"
+            ]
+        ]
+    },
+    {
+        "id": "142ea86c6ab191dc",
+        "type": "http in",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "url": "/get",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "4985877a6a8abdc5"
+            ]
+        ]
+    },
+    {
+        "id": "3aa2fa71d054d93e",
+        "type": "http response",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4985877a6a8abdc5",
+        "type": "template",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"test\":\"Robocon 100 ten\"\n}",
+        "output": "str",
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [
+                "3aa2fa71d054d93e"
+            ]
+        ]
     }
 ]
