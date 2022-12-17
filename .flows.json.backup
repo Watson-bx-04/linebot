@@ -28,8 +28,8 @@
         "topic": "",
         "payload": "ピザの注文",
         "payloadType": "str",
-        "x": 420,
-        "y": 80,
+        "x": 400,
+        "y": 240,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -97,8 +97,8 @@
         "topic": "",
         "payload": "マルゲリータ",
         "payloadType": "str",
-        "x": 410,
-        "y": 160,
+        "x": 390,
+        "y": 320,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -126,8 +126,8 @@
         "topic": "",
         "payload": "Mサイズ",
         "payloadType": "str",
-        "x": 420,
-        "y": 260,
+        "x": 400,
+        "y": 420,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -155,8 +155,8 @@
         "topic": "",
         "payload": "6pm",
         "payloadType": "str",
-        "x": 430,
-        "y": 340,
+        "x": 410,
+        "y": 500,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -184,8 +184,8 @@
         "topic": "",
         "payload": "やっぱり7pm",
         "payloadType": "str",
-        "x": 410,
-        "y": 420,
+        "x": 390,
+        "y": 580,
         "wires": [
             [
                 "cce3caeaaa84d971"
@@ -213,8 +213,8 @@
         "topic": "",
         "payload": "OK",
         "payloadType": "str",
-        "x": 430,
-        "y": 500,
+        "x": 410,
+        "y": 660,
         "wires": [
             [
                 "cce3caeaaa84d971"
