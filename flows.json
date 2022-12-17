@@ -26,13 +26,13 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 100,
+        "payload": "ピザの注文",
+        "payloadType": "str",
+        "x": 400,
+        "y": 240,
         "wires": [
             [
-                "6df93be5d083c18b"
+                "cce3caeaaa84d971"
             ]
         ]
     },
@@ -41,15 +41,201 @@
         "type": "debug",
         "z": "8a400ed1add1fbd9",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 340,
-        "y": 160,
+        "x": 860,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cce3caeaaa84d971",
+        "type": "watson-assistant-v2",
+        "z": "8a400ed1add1fbd9",
+        "name": "new",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/b679ab6b-22cf-4a61-8f74-8370574977c2",
+        "assistant_id": "b2564014-6aaf-4d55-b69e-5bf0d7e45ea6",
+        "debug": false,
+        "restart": false,
+        "return_context": false,
+        "alternate_intents": false,
+        "multisession": false,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "6df93be5d083c18b",
+                "3c222a454588e2f8"
+            ]
+        ]
+    },
+    {
+        "id": "f456f4bad51399b8",
+        "type": "inject",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "マルゲリータ",
+        "payloadType": "str",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "cce3caeaaa84d971"
+            ]
+        ]
+    },
+    {
+        "id": "4a942704f51623f4",
+        "type": "inject",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Mサイズ",
+        "payloadType": "str",
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "cce3caeaaa84d971"
+            ]
+        ]
+    },
+    {
+        "id": "fd615ee3f70742fd",
+        "type": "inject",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "6pm",
+        "payloadType": "str",
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [
+                "cce3caeaaa84d971"
+            ]
+        ]
+    },
+    {
+        "id": "a0b47bf6136d7d4b",
+        "type": "inject",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "やっぱり7pm",
+        "payloadType": "str",
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "cce3caeaaa84d971"
+            ]
+        ]
+    },
+    {
+        "id": "8058829c4fef226b",
+        "type": "inject",
+        "z": "8a400ed1add1fbd9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "OK",
+        "payloadType": "str",
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [
+                "cce3caeaaa84d971"
+            ]
+        ]
+    },
+    {
+        "id": "3c222a454588e2f8",
+        "type": "debug",
+        "z": "8a400ed1add1fbd9",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.output.generic[0].text",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 180,
         "wires": []
     }
 ]
