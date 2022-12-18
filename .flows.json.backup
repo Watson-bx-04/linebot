@@ -16,17 +16,9 @@
         "env": []
     },
     {
-        "id": "8b3dd138d1c2403f",
-        "type": "tab",
-        "label": "フロー 3",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "cd3a7a89a3042671",
+        "id": "21fc3f50d39736ce",
         "type": "inject",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
         "name": "",
         "props": [
             {
@@ -45,34 +37,35 @@
         "payload": "ピザの注文",
         "payloadType": "str",
         "x": 400,
-        "y": 260,
+        "y": 440,
         "wires": [
             [
-                "cce3caeaaa84d971"
+                "12912e63101d2bfb"
             ]
         ]
     },
     {
-        "id": "6df93be5d083c18b",
+        "id": "7e35e482de55fa25",
         "type": "debug",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
         "name": "debug 1",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 260,
+        "x": 960,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "cce3caeaaa84d971",
+        "id": "12912e63101d2bfb",
         "type": "watson-assistant-v2",
-        "z": "8a400ed1add1fbd9",
-        "name": "new",
+        "z": "e617203d33f6d5d3",
+        "name": "ピザ屋",
         "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/b679ab6b-22cf-4a61-8f74-8370574977c2",
         "assistant_id": "b2564014-6aaf-4d55-b69e-5bf0d7e45ea6",
         "debug": false,
@@ -83,20 +76,20 @@
         "timeout": "",
         "optout-learning": false,
         "persist-session-id": false,
-        "x": 610,
-        "y": 260,
+        "x": 710,
+        "y": 440,
         "wires": [
             [
-                "6df93be5d083c18b",
-                "3c222a454588e2f8",
-                "5a85df5dfda9bc67"
+                "7e35e482de55fa25",
+                "4f9063aa96f34aa1",
+                "adf7a662132d8940"
             ]
         ]
     },
     {
-        "id": "f456f4bad51399b8",
+        "id": "bb0bb6561cbe82a9",
         "type": "inject",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
         "name": "",
         "props": [
             {
@@ -115,17 +108,17 @@
         "payload": "マルゲリータ",
         "payloadType": "str",
         "x": 390,
-        "y": 340,
+        "y": 480,
         "wires": [
             [
-                "cce3caeaaa84d971"
+                "12912e63101d2bfb"
             ]
         ]
     },
     {
-        "id": "4a942704f51623f4",
+        "id": "37648fd36b3debdb",
         "type": "inject",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
         "name": "",
         "props": [
             {
@@ -144,46 +137,17 @@
         "payload": "Mサイズ",
         "payloadType": "str",
         "x": 400,
-        "y": 440,
-        "wires": [
-            [
-                "cce3caeaaa84d971"
-            ]
-        ]
-    },
-    {
-        "id": "fd615ee3f70742fd",
-        "type": "inject",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "6pm",
-        "payloadType": "str",
-        "x": 410,
         "y": 520,
         "wires": [
             [
-                "cce3caeaaa84d971"
+                "12912e63101d2bfb"
             ]
         ]
     },
     {
-        "id": "a0b47bf6136d7d4b",
+        "id": "6a48b5174892a4c7",
         "type": "inject",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
         "name": "",
         "props": [
             {
@@ -199,20 +163,49 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "やっぱり7pm",
+        "payload": "午後６時",
         "payloadType": "str",
-        "x": 390,
-        "y": 600,
+        "x": 400,
+        "y": 560,
         "wires": [
             [
-                "cce3caeaaa84d971"
+                "12912e63101d2bfb"
             ]
         ]
     },
     {
-        "id": "8058829c4fef226b",
+        "id": "dcf07eaa6a07a602",
         "type": "inject",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "やっぱりシーフード",
+        "payloadType": "str",
+        "x": 370,
+        "y": 600,
+        "wires": [
+            [
+                "12912e63101d2bfb"
+            ]
+        ]
+    },
+    {
+        "id": "97d5e514c006ef54",
+        "type": "inject",
+        "z": "e617203d33f6d5d3",
         "name": "",
         "props": [
             {
@@ -234,14 +227,14 @@
         "y": 680,
         "wires": [
             [
-                "cce3caeaaa84d971"
+                "12912e63101d2bfb"
             ]
         ]
     },
     {
-        "id": "3c222a454588e2f8",
+        "id": "4f9063aa96f34aa1",
         "type": "debug",
-        "z": "8a400ed1add1fbd9",
+        "z": "e617203d33f6d5d3",
         "name": "debug 2",
         "active": true,
         "tosidebar": true,
@@ -251,350 +244,173 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 320,
+        "x": 960,
+        "y": 480,
         "wires": []
     },
     {
-        "id": "142ea86c6ab191dc",
-        "type": "http in",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "url": "/debug",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 390,
-        "y": 40,
-        "wires": [
-            [
-                "661c28c2bc044432"
-            ]
-        ]
-    },
-    {
-        "id": "3aa2fa71d054d93e",
-        "type": "http response",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 850,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "5a85df5dfda9bc67",
-        "type": "change",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.output.generic[0].text",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "186add14f8c703ed",
-        "type": "template",
-        "z": "8a400ed1add1fbd9",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "json",
-        "syntax": "plain",
-        "template": "\"messages\": [\n    {\n      \"type\": \"flex\",\n      \"altText\": \"This is a Flex Message\",\n      \"contents\": {\n        \"type\": \"bubble\",\n        \"body\": {\n          \"type\": \"box\",\n          \"layout\": \"horizontal\",\n          \"contents\": [\n            {\n              \"type\": \"text\",\n              \"text\": \"Hello,\"\n            },\n            {\n              \"type\": \"text\",\n              \"text\": \"World!\"\n            }\n          ]\n        }\n      }\n    }\n]",
-        "output": "str",
-        "x": 620,
-        "y": 100,
-        "wires": [
-            [
-                "524d0bbdbe0e5c56"
-            ]
-        ]
-    },
-    {
-        "id": "524d0bbdbe0e5c56",
-        "type": "debug",
-        "z": "8a400ed1add1fbd9",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "661c28c2bc044432",
-        "type": "function",
-        "z": "8a400ed1add1fbd9",
-        "name": "function 1",
-        "func": "\nconst line = context.global.linebot;\n\nconst config = {\n    channelAccessToken: '***',\n    channelSecret: '***',\n};\n\n// create LINE SDK client\nconst client = new line.Client(config);\n// get event\nconst event = msg.payload.events[0];\n// get message\nconst received_msg = event.message.text;\n// return message\nvar massage = { type: 'text', text: received_msg };\n\n\n// replay!\nclient.replyMessage(event.replyToken, massage);\n\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 40,
-        "wires": [
-            [
-                "3aa2fa71d054d93e"
-            ]
-        ]
-    },
-    {
-        "id": "7d6152bf2b261b0c",
-        "type": "http in",
-        "z": "8b3dd138d1c2403f",
+        "id": "d2be7c3ffe4e6363",
+        "type": "Webhook",
+        "z": "e617203d33f6d5d3",
         "name": "",
         "url": "/line_webhook",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 110,
-        "y": 180,
-        "wires": [
-            [
-                "fd32b96bb8f421b1"
-            ]
-        ]
-    },
-    {
-        "id": "fd32b96bb8f421b1",
-        "type": "function",
-        "z": "8b3dd138d1c2403f",
-        "name": "getText",
-        "func": "//flowへ格納\nflow.set(\"replyToken\",msg.payload.events[0].replyToken);\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 180,
-        "wires": [
-            [
-                "8e62b7d862456a4e",
-                "955ca607180f29b7",
-                "bad106b50a74f1c2"
-            ]
-        ]
-    },
-    {
-        "id": "8e62b7d862456a4e",
-        "type": "debug",
-        "z": "8b3dd138d1c2403f",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 650,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "955ca607180f29b7",
-        "type": "http response",
-        "z": "8b3dd138d1c2403f",
-        "name": "",
-        "x": 630,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "3746bff0b14d8124",
-        "type": "http request",
-        "z": "8b3dd138d1c2403f",
-        "name": "Reply Message",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "https://api.line.me/v2/bot/message/reply",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1000,
-        "y": 320,
-        "wires": [
-            [
-                "a28b9d6f73d90c43"
-            ]
-        ]
-    },
-    {
-        "id": "a28b9d6f73d90c43",
-        "type": "debug",
-        "z": "8b3dd138d1c2403f",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "complete": "true",
-        "x": 1170,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "7e023574631c2a4e",
-        "type": "debug",
-        "z": "8b3dd138d1c2403f",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 750,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "85796c37ba6fd476",
-        "type": "change",
-        "z": "8b3dd138d1c2403f",
-        "name": "Watsonの戻り値から変数に格納",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.optext",
-                "pt": "msg",
-                "to": "payload.output.generic.0.text",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 410,
-        "y": 480,
-        "wires": [
-            [
-                "7e023574631c2a4e",
-                "828b18c6f482caf3"
-            ]
-        ]
-    },
-    {
-        "id": "bad106b50a74f1c2",
-        "type": "change",
-        "z": "8b3dd138d1c2403f",
-        "name": "Watson向けにパラメータ入替え",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.events.0.message.text",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 410,
-        "y": 320,
-        "wires": [
-            [
-                "0e2cd9ea35d37fc3"
-            ]
-        ]
-    },
-    {
-        "id": "84a1bbad701bf640",
-        "type": "change",
-        "z": "8b3dd138d1c2403f",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.optext",
-                "pt": "msg",
-                "to": "payload.events[0].message.text",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 610,
+        "x": 360,
         "y": 240,
         "wires": [
             [
-                "828b18c6f482caf3"
+                "e8b0bed45641958e"
             ]
         ]
     },
     {
-        "id": "0e2cd9ea35d37fc3",
-        "type": "watson-assistant-v2",
-        "z": "8b3dd138d1c2403f",
+        "id": "dc47ce5cfe1ac0eb",
+        "type": "ReplyMessage",
+        "z": "e617203d33f6d5d3",
         "name": "",
-        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/b679ab6b-22cf-4a61-8f74-8370574977c2",
-        "assistant_id": "b2564014-6aaf-4d55-b69e-5bf0d7e45ea6",
-        "debug": false,
-        "restart": false,
-        "return_context": false,
-        "alternate_intents": false,
-        "multisession": false,
-        "timeout": "",
-        "optout-learning": false,
-        "persist-session-id": false,
-        "x": 350,
-        "y": 400,
+        "replyMessage": "",
+        "x": 977,
+        "y": 241,
+        "wires": []
+    },
+    {
+        "id": "665ee9fc46a29dfd",
+        "type": "inject",
+        "z": "e617203d33f6d5d3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 40,
         "wires": [
             [
-                "85796c37ba6fd476"
+                "6e08bf99f32ad4f3"
             ]
         ]
     },
     {
-        "id": "828b18c6f482caf3",
+        "id": "6e08bf99f32ad4f3",
+        "type": "debug",
+        "z": "e617203d33f6d5d3",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "567341c0b0337713",
         "type": "function",
-        "z": "8b3dd138d1c2403f",
-        "name": "createReplyMessage",
-        "func": "//flowから取り出す\nvar output_text = flow.get(\"text\");\n\nvar post_request = {\n    \"headers\": {\n        \"content-type\": \"application/json; charset=UTF-8\",\n        \"Authorization\": \" Bearer \" + \"{***}\"\n    },\n    \"payload\": {\n        //\"replyToken\": msg.payload.events[0].replyToken,\n        \"replyToken\": flow.get(\"replyToken\"),\n        \"messages\": [\n            {\n                \"type\": \"text\",\n                \"text\": msg.payload.optext\n            },\n            {\n                \"type\": \"template\",\n                \"altText\": \"this is a buttons template\",\n                \"template\": {\n                    \"type\": \"buttons\",\n                    \"title\": \"ピザの種類\",\n                    \"text\": \"おすすめ\",\n                    \"actions\": [\n                        {\n                            \"type\": \"message\",\n                            \"label\": \"マルゲリータ\",\n                            \"text\": \"マルゲリータ\",\n                        },\n                        {\n                            \"type\": \"message\",\n                            \"label\": \"シーフード\",\n                            \"text\": \"シーフード\"\n                        },\n                        {\n                            \"type\": \"message\",\n                            \"label\": \"ペパロニ\",\n                            \"text\": \"ペパロニ\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n};\n\nreturn post_request;",
+        "z": "e617203d33f6d5d3",
+        "name": "pre",
+        "func": "\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 780,
-        "y": 320,
+        "x": 588,
+        "y": 323,
         "wires": [
             [
-                "3746bff0b14d8124"
+                "12912e63101d2bfb"
             ]
+        ]
+    },
+    {
+        "id": "adf7a662132d8940",
+        "type": "function",
+        "z": "e617203d33f6d5d3",
+        "name": "post",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 825,
+        "y": 321,
+        "wires": [
+            [
+                "dc47ce5cfe1ac0eb"
+            ]
+        ]
+    },
+    {
+        "id": "e8b0bed45641958e",
+        "type": "switch",
+        "z": "e617203d33f6d5d3",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 534,
+        "y": 247,
+        "wires": [
+            [
+                "dc47ce5cfe1ac0eb"
+            ],
+            [
+                "567341c0b0337713"
+            ]
+        ]
+    },
+    {
+        "id": "f0b94937087a7dc9",
+        "type": "change",
+        "z": "e617203d33f6d5d3",
+        "name": "type: template の場合",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"type\":\"template\",\"altText\":\"this is a buttons template\",\"template\":{\"type\":\"buttons\",\"title\":\"ピザの種類\",\"text\":\"おすすめ\",\"actions\":[{\"type\":\"message\",\"label\":\"マルゲリータ\",\"text\":\"マルゲリータ\"},{\"type\":\"message\",\"label\":\"シーフード\",\"text\":\"シーフード\"},{\"type\":\"message\",\"label\":\"ペパロニ\",\"text\":\"ペパロニ\"}]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 120,
+        "wires": [
+            []
         ]
     }
 ]
