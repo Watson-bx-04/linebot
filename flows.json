@@ -1,8 +1,24 @@
 [
     {
-        "id": "e617203d33f6d5d3",
+        "id": "0244122cf6d8d1ad",
         "type": "tab",
         "label": "フロー 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fcbacce6485cbe82",
+        "type": "tab",
+        "label": "フロー 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e617203d33f6d5d3",
+        "type": "tab",
+        "label": "実装例",
         "disabled": false,
         "info": "",
         "env": []
@@ -28,7 +44,7 @@
         "topic": "",
         "payload": "ピザの注文",
         "payloadType": "str",
-        "x": 200,
+        "x": 180,
         "y": 300,
         "wires": [
             [
@@ -49,7 +65,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
+        "x": 800,
         "y": 300,
         "wires": []
     },
@@ -99,7 +115,7 @@
         "topic": "",
         "payload": "マルゲリータ",
         "payloadType": "str",
-        "x": 190,
+        "x": 170,
         "y": 340,
         "wires": [
             [
@@ -128,7 +144,7 @@
         "topic": "",
         "payload": "Mサイズ",
         "payloadType": "str",
-        "x": 200,
+        "x": 180,
         "y": 380,
         "wires": [
             [
@@ -157,7 +173,7 @@
         "topic": "",
         "payload": "午後６時",
         "payloadType": "str",
-        "x": 200,
+        "x": 180,
         "y": 420,
         "wires": [
             [
@@ -186,7 +202,7 @@
         "topic": "",
         "payload": "やっぱりシーフード",
         "payloadType": "str",
-        "x": 170,
+        "x": 150,
         "y": 460,
         "wires": [
             [
@@ -215,7 +231,7 @@
         "topic": "",
         "payload": "OK",
         "payloadType": "str",
-        "x": 210,
+        "x": 190,
         "y": 540,
         "wires": [
             [
@@ -236,7 +252,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
+        "x": 800,
         "y": 340,
         "wires": []
     },
@@ -260,53 +276,8 @@
         "z": "e617203d33f6d5d3",
         "name": "",
         "replyMessage": "",
-        "x": 777,
-        "y": 101,
-        "wires": []
-    },
-    {
-        "id": "665ee9fc46a29dfd",
-        "type": "inject",
-        "z": "e617203d33f6d5d3",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "60",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 720,
-        "wires": [
-            [
-                "6e08bf99f32ad4f3"
-            ]
-        ]
-    },
-    {
-        "id": "6e08bf99f32ad4f3",
-        "type": "debug",
-        "z": "e617203d33f6d5d3",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 720,
+        "x": 820,
+        "y": 100,
         "wires": []
     },
     {
@@ -378,31 +349,6 @@
             [
                 "567341c0b0337713"
             ]
-        ]
-    },
-    {
-        "id": "f0b94937087a7dc9",
-        "type": "change",
-        "z": "e617203d33f6d5d3",
-        "name": "type: template の場合",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"type\":\"template\",\"altText\":\"this is a buttons template\",\"template\":{\"type\":\"buttons\",\"title\":\"ピザの種類\",\"text\":\"おすすめ\",\"actions\":[{\"type\":\"message\",\"label\":\"マルゲリータ\",\"text\":\"マルゲリータ\"},{\"type\":\"message\",\"label\":\"シーフード\",\"text\":\"シーフード\"},{\"type\":\"message\",\"label\":\"ペパロニ\",\"text\":\"ペパロニ\"}]}}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 640,
-        "wires": [
-            []
         ]
     }
 ]
