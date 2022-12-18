@@ -1,6 +1,6 @@
 [
     {
-        "id": "0244122cf6d8d1ad",
+        "id": "fd4cd90eb9d50e53",
         "type": "tab",
         "label": "フロー 1",
         "disabled": false,
@@ -8,15 +8,7 @@
         "env": []
     },
     {
-        "id": "fcbacce6485cbe82",
-        "type": "tab",
-        "label": "フロー 2",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "e617203d33f6d5d3",
+        "id": "0244122cf6d8d1ad",
         "type": "tab",
         "label": "実装例",
         "disabled": false,
@@ -24,9 +16,85 @@
         "env": []
     },
     {
-        "id": "21fc3f50d39736ce",
+        "id": "629f1d093d82c2df",
+        "type": "Webhook",
+        "z": "0244122cf6d8d1ad",
+        "name": "",
+        "url": "/line_webhook",
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "8c22b0b9e22f24d9"
+            ]
+        ]
+    },
+    {
+        "id": "01c7c442ed5a249f",
+        "type": "ReplyMessage",
+        "z": "0244122cf6d8d1ad",
+        "name": "",
+        "replyMessage": "",
+        "x": 680,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8c22b0b9e22f24d9",
+        "type": "watson-assistant-v2",
+        "z": "0244122cf6d8d1ad",
+        "name": "",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/b679ab6b-22cf-4a61-8f74-8370574977c2",
+        "assistant_id": "b2564014-6aaf-4d55-b69e-5bf0d7e45ea6",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": false,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "6c740752d0951d54",
+                "4ee65066954d3f0b",
+                "f57bda67b4e57120"
+            ]
+        ]
+    },
+    {
+        "id": "6c740752d0951d54",
+        "type": "change",
+        "z": "0244122cf6d8d1ad",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.output.generic[0].text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "01c7c442ed5a249f"
+            ]
+        ]
+    },
+    {
+        "id": "d2453d904d02a3e2",
         "type": "inject",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
         "name": "",
         "props": [
             {
@@ -44,60 +112,18 @@
         "topic": "",
         "payload": "ピザの注文",
         "payloadType": "str",
-        "x": 180,
-        "y": 300,
+        "x": 200,
+        "y": 280,
         "wires": [
             [
-                "12912e63101d2bfb"
+                "8c22b0b9e22f24d9"
             ]
         ]
     },
     {
-        "id": "7e35e482de55fa25",
-        "type": "debug",
-        "z": "e617203d33f6d5d3",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "12912e63101d2bfb",
-        "type": "watson-assistant-v2",
-        "z": "e617203d33f6d5d3",
-        "name": "ピザ屋",
-        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/b679ab6b-22cf-4a61-8f74-8370574977c2",
-        "assistant_id": "b2564014-6aaf-4d55-b69e-5bf0d7e45ea6",
-        "debug": false,
-        "restart": false,
-        "return_context": false,
-        "alternate_intents": false,
-        "multisession": false,
-        "timeout": "",
-        "optout-learning": false,
-        "persist-session-id": false,
-        "x": 510,
-        "y": 300,
-        "wires": [
-            [
-                "7e35e482de55fa25",
-                "4f9063aa96f34aa1",
-                "adf7a662132d8940"
-            ]
-        ]
-    },
-    {
-        "id": "bb0bb6561cbe82a9",
+        "id": "5b852e7d1a5a0854",
         "type": "inject",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
         "name": "",
         "props": [
             {
@@ -115,18 +141,18 @@
         "topic": "",
         "payload": "マルゲリータ",
         "payloadType": "str",
-        "x": 170,
-        "y": 340,
+        "x": 190,
+        "y": 320,
         "wires": [
             [
-                "12912e63101d2bfb"
+                "8c22b0b9e22f24d9"
             ]
         ]
     },
     {
-        "id": "37648fd36b3debdb",
+        "id": "a4647e9638cea9e1",
         "type": "inject",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
         "name": "",
         "props": [
             {
@@ -144,18 +170,18 @@
         "topic": "",
         "payload": "Mサイズ",
         "payloadType": "str",
-        "x": 180,
-        "y": 380,
+        "x": 200,
+        "y": 360,
         "wires": [
             [
-                "12912e63101d2bfb"
+                "8c22b0b9e22f24d9"
             ]
         ]
     },
     {
-        "id": "6a48b5174892a4c7",
+        "id": "9356aee3344d6592",
         "type": "inject",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
         "name": "",
         "props": [
             {
@@ -173,18 +199,18 @@
         "topic": "",
         "payload": "午後６時",
         "payloadType": "str",
-        "x": 180,
-        "y": 420,
+        "x": 200,
+        "y": 400,
         "wires": [
             [
-                "12912e63101d2bfb"
+                "8c22b0b9e22f24d9"
             ]
         ]
     },
     {
-        "id": "dcf07eaa6a07a602",
+        "id": "d3e09d88d9fba327",
         "type": "inject",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
         "name": "",
         "props": [
             {
@@ -202,18 +228,18 @@
         "topic": "",
         "payload": "やっぱりシーフード",
         "payloadType": "str",
-        "x": 150,
-        "y": 460,
+        "x": 170,
+        "y": 440,
         "wires": [
             [
-                "12912e63101d2bfb"
+                "8c22b0b9e22f24d9"
             ]
         ]
     },
     {
-        "id": "97d5e514c006ef54",
+        "id": "6af5fa8f43dd51ec",
         "type": "inject",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
         "name": "",
         "props": [
             {
@@ -231,18 +257,35 @@
         "topic": "",
         "payload": "OK",
         "payloadType": "str",
-        "x": 190,
-        "y": 540,
+        "x": 210,
+        "y": 520,
         "wires": [
             [
-                "12912e63101d2bfb"
+                "8c22b0b9e22f24d9"
             ]
         ]
     },
     {
-        "id": "4f9063aa96f34aa1",
+        "id": "4ee65066954d3f0b",
         "type": "debug",
-        "z": "e617203d33f6d5d3",
+        "z": "0244122cf6d8d1ad",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f57bda67b4e57120",
+        "type": "debug",
+        "z": "0244122cf6d8d1ad",
         "name": "debug 2",
         "active": true,
         "tosidebar": true,
@@ -252,103 +295,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 340,
+        "x": 640,
+        "y": 380,
         "wires": []
-    },
-    {
-        "id": "d2be7c3ffe4e6363",
-        "type": "Webhook",
-        "z": "e617203d33f6d5d3",
-        "name": "",
-        "url": "/line_webhook",
-        "x": 160,
-        "y": 100,
-        "wires": [
-            [
-                "e8b0bed45641958e"
-            ]
-        ]
-    },
-    {
-        "id": "dc47ce5cfe1ac0eb",
-        "type": "ReplyMessage",
-        "z": "e617203d33f6d5d3",
-        "name": "",
-        "replyMessage": "",
-        "x": 820,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "567341c0b0337713",
-        "type": "function",
-        "z": "e617203d33f6d5d3",
-        "name": "pre",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 388,
-        "y": 183,
-        "wires": [
-            [
-                "12912e63101d2bfb"
-            ]
-        ]
-    },
-    {
-        "id": "adf7a662132d8940",
-        "type": "function",
-        "z": "e617203d33f6d5d3",
-        "name": "post",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 625,
-        "y": 181,
-        "wires": [
-            [
-                "dc47ce5cfe1ac0eb"
-            ]
-        ]
-    },
-    {
-        "id": "e8b0bed45641958e",
-        "type": "switch",
-        "z": "e617203d33f6d5d3",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 334,
-        "y": 107,
-        "wires": [
-            [
-                "dc47ce5cfe1ac0eb"
-            ],
-            [
-                "567341c0b0337713"
-            ]
-        ]
     }
 ]
