@@ -16,12 +16,86 @@
         "env": []
     },
     {
+        "id": "01a90da5550789ae",
+        "type": "ReplyMessage",
+        "z": "fd4cd90eb9d50e53",
+        "name": "",
+        "replyMessage": "",
+        "x": 620,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f36d36b41d1c7d5b",
+        "type": "change",
+        "z": "fd4cd90eb9d50e53",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.output.generic[0].text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "01a90da5550789ae"
+            ]
+        ]
+    },
+    {
+        "id": "87c87bf600a7e595",
+        "type": "watson-assistant-v2",
+        "z": "fd4cd90eb9d50e53",
+        "name": "",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/b679ab6b-22cf-4a61-8f74-8370574977c2",
+        "assistant_id": "b2564014-6aaf-4d55-b69e-5bf0d7e45ea6",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": false,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 370,
+        "y": 240,
+        "wires": [
+            [
+                "f36d36b41d1c7d5b"
+            ]
+        ]
+    },
+    {
+        "id": "9a6387cf2814fe6a",
+        "type": "Webhook",
+        "z": "fd4cd90eb9d50e53",
+        "name": "",
+        "url": "/line_webhook",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "87c87bf600a7e595"
+            ]
+        ]
+    },
+    {
         "id": "629f1d093d82c2df",
         "type": "Webhook",
         "z": "0244122cf6d8d1ad",
         "name": "",
         "url": "/line_webhook",
-        "x": 160,
+        "x": 200,
         "y": 120,
         "wires": [
             [
@@ -35,7 +109,7 @@
         "z": "0244122cf6d8d1ad",
         "name": "",
         "replyMessage": "",
-        "x": 640,
+        "x": 680,
         "y": 120,
         "wires": []
     },
@@ -54,7 +128,7 @@
         "timeout": "",
         "optout-learning": false,
         "persist-session-id": false,
-        "x": 390,
+        "x": 430,
         "y": 280,
         "wires": [
             [
@@ -83,7 +157,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
+        "x": 560,
         "y": 200,
         "wires": [
             [
@@ -112,7 +186,7 @@
         "topic": "",
         "payload": "ピザの注文",
         "payloadType": "str",
-        "x": 160,
+        "x": 200,
         "y": 280,
         "wires": [
             [
@@ -141,7 +215,7 @@
         "topic": "",
         "payload": "マルゲリータ",
         "payloadType": "str",
-        "x": 150,
+        "x": 190,
         "y": 320,
         "wires": [
             [
@@ -170,7 +244,7 @@
         "topic": "",
         "payload": "Mサイズ",
         "payloadType": "str",
-        "x": 160,
+        "x": 200,
         "y": 360,
         "wires": [
             [
@@ -199,7 +273,7 @@
         "topic": "",
         "payload": "午後６時",
         "payloadType": "str",
-        "x": 160,
+        "x": 200,
         "y": 400,
         "wires": [
             [
@@ -228,7 +302,7 @@
         "topic": "",
         "payload": "やっぱりシーフード",
         "payloadType": "str",
-        "x": 130,
+        "x": 170,
         "y": 440,
         "wires": [
             [
@@ -257,7 +331,7 @@
         "topic": "",
         "payload": "OK",
         "payloadType": "str",
-        "x": 170,
+        "x": 210,
         "y": 520,
         "wires": [
             [
@@ -269,7 +343,7 @@
         "id": "4ee65066954d3f0b",
         "type": "debug",
         "z": "0244122cf6d8d1ad",
-        "name": "debug 3",
+        "name": "debug 1",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -278,7 +352,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
+        "x": 640,
         "y": 320,
         "wires": []
     },
@@ -286,7 +360,7 @@
         "id": "f57bda67b4e57120",
         "type": "debug",
         "z": "0244122cf6d8d1ad",
-        "name": "debug 4",
+        "name": "debug 2",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -295,7 +369,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
+        "x": 640,
         "y": 380,
         "wires": []
     }
